@@ -193,8 +193,8 @@ const Navbar = () => {
             onMouseEnter={() => {
               setShowMobileMenu(true);
             }}
-            onMouseLeave={()=>{
-              setShowMobileMenu(false)
+            onMouseLeave={() => {
+              setShowMobileMenu(false);
             }}
           >
             <div>
@@ -203,49 +203,70 @@ const Navbar = () => {
             {showMobileMenu && (
               <div className="toggleMenu">
                 <div
-                  onClick={() => navigate("/makeup")}
+                  onClick={() => {
+                    navigate("/makeup");
+                    setShowMobileMenu(false);
+                  }}
                   className="lowerNavbarNavigation"
                 >
                   <p>MAKEUP</p>
                   <i className="bx bx-chevron-down"></i>
                 </div>
                 <div
-                  onClick={() => navigate("/skin")}
+                  onClick={() => {
+                    navigate("/skin");
+                    setShowMobileMenu(false);
+                  }}
                   className="lowerNavbarNavigation"
                 >
                   <p>SKIN</p>
                   <i className="bx bx-chevron-down"></i>
                 </div>
                 <div
-                  onClick={() => navigate("/hair")}
+                  onClick={() => {
+                    navigate("/hair");
+                    setShowMobileMenu(false);
+                  }}
                   className="lowerNavbarNavigation"
                 >
                   <p>HAIR</p>
                   <i className="bx bx-chevron-down"></i>
                 </div>
                 <div
-                  onClick={() => navigate("/personal-care")}
+                  onClick={() => {
+                    navigate("/personal-care");
+                    setShowMobileMenu(false);
+                  }}
                   className="lowerNavbarNavigation"
                 >
                   <p>PERSONAL CARE</p>
                   <i className="bx bx-chevron-down"></i>
                 </div>
                 <div
-                  onClick={() => navigate("/mom-baby-care")}
+                  onClick={() => {
+                    navigate("/mom-baby-care");
+                    setShowMobileMenu(false);
+                  }}
                   className="lowerNavbarNavigation"
                 >
                   <p>MOM & BABY CARE</p>
                   <i className="bx bx-chevron-down"></i>
                 </div>
                 <div
-                  onClick={() => navigate("/fragrance")}
+                  onClick={() => {
+                    navigate("/fragrance");
+                    setShowMobileMenu(false);
+                  }}
                   className="lowerNavbarNavigation"
                 >
                   <p>FRAGRANCE</p>
                   <i className="bx bx-chevron-down"></i>
                 </div>
                 <div
-                  onClick={() => navigate("/womens")}
+                  onClick={() => {
+                    navigate("/womens");
+                    setShowMobileMenu(false);
+                  }}
                   className="lowerNavbarNavigation"
                 >
                   <p>WOMEN FASHION</p>
