@@ -1,0 +1,225 @@
+.navbarWrapper{
+    padding: 10px 0;
+    width: 95%;
+    max-width: 1240px;
+    margin: auto;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.searchWrapper{
+    border: 1px solid #ded9d9;
+    border-radius: 3px;
+    margin-right: 8rem;
+    display: flex;
+}
+.logo img {
+    height: 3rem;
+}
+.searchbox{
+    padding: 0.5rem;
+    
+}
+.searchbox input, .searchbox select, .searchWrapper button{
+    border: none;
+}
+.searchbox select{
+    width: 12rem;
+    color: #999999;
+    cursor: pointer;
+}
+.searchbox span{
+    padding: 0 1rem;
+    color: #999999
+}
+.searchbox input{
+    width: 14rem;
+    color: #999999;
+}
+.searchbox input:focus{
+    outline: none;
+}
+.searchWrapper button{
+    width: 3rem;
+    color: white;
+    background-color: #DD0285;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+}
+.searchWrapper button:hover{
+    background-color: #bd0774;
+}
+.account{
+    display: flex;
+    gap: 1rem;
+}
+.account button{
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 1.4rem;
+    padding-top: 4px;
+    background: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.acDetails>span{
+    margin-left: 4px;
+}
+.wishlist>button{
+    border: 1px solid black;
+}
+.acDetails>button{
+    border: 1px solid #ded9d9;
+}
+.wishlist>button:hover, .acDetails>button:hover{
+    border: 1px solid transparent;
+    background-color: #bd0774;
+    color: white;
+}
+.accountMenu{
+    position:absolute;
+    background-color: white;
+    margin-top: -3px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: aliceblue;
+    border: 1px solid #ded9d9;
+    border-radius: 0 10px 10px 10px;
+}
+.lowerNavbarWrapper{
+    background-color: #DD0285;
+    display: flex;
+}
+.lowerNavbar{
+    display: flex;
+    width: 95%;
+    max-width: 1240px;
+    justify-content: space-between;
+    margin: auto;
+}
+.lowerNavbarNavigation{
+    display: flex;
+    gap: 4px;
+    cursor: pointer;
+}
+.lowerNavbarNavigation:hover{
+    background-color: #bd0774;
+}
+.lowerNavbar>div{
+    padding: 0.8rem 0.8rem;
+}
+.lowerNavbar>div>p, .lowerNavbar>div>i{
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: white;
+}
+.myCart{
+    background-color: #bd0774;
+    color: white;
+    font-weight: bold;
+}
+.lowerNavbarForMobile{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    display: none;
+}
+.myCartForMobile{
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    background-color: #bd0774;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+}
+.searchboxForMobile{
+    display: none;
+}
+@media screen and (max-width: 1240px) {
+    .navbarWrapper{
+        max-width: 1024px;
+    }
+    .searchWrapper{
+        margin-right: auto;
+    }
+    .searchbox select{
+        width: 8rem;
+    }
+    .searchbox input{
+        width: 10rem;
+    }
+    .lowerNavbar{
+        width: 1024px;
+    }
+    .lowerNavbar>div{
+        padding: 0.6rem 0.6rem;
+    }
+    .lowerNavbar>div>p, .lowerNavbar>div>i{
+        font-size: 0.6rem;
+    }
+}
+@media screen and (max-width: 840px) {
+    .searchbox select{
+        display: none;
+    }
+    .searchbox span{
+        display: none;
+    }
+    .searchbox input{
+        width: 14rem;
+    }
+    .lowerNavbar{
+        display: none;
+    }
+    .lowerNavbarForMobile{
+        display: flex;
+    }
+}
+@media screen and (max-width: 740px) {
+    .searchWrapper{
+        display: none;
+    }
+    .searchboxForMobile{
+        display: block;
+        width: max-content;
+        margin: auto;
+        display: flex;
+        border: 1px solid #ded9d9;
+        border-radius: 3px;
+    }
+    .searchboxForMobile input, .searchboxForMobile button {
+        border: none;
+        padding: 0.6rem 0.7rem;
+        font-size: 0.8rem;
+    }
+    .searchboxForMobile input{
+        width: calc(100vw - 6rem);
+    }
+    .searchboxForMobile button {
+        background-color: #DD0285;
+        color: white;
+        font-weight: bold;
+        border-radius: 0 3px 3px 0;
+    }
+}
+@media screen and (max-width: 440px) {
+    .logo img{
+        height: 2rem;
+    }
+    .account{
+        gap: 0.6rem;
+    }
+    .account button{
+        height: 2rem;
+        width: 2rem;
+        font-size: 1rem;
+    }
+    .acDetails span {
+        font-size: 0.8rem;
+    }
+}

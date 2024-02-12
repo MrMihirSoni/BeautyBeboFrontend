@@ -1,0 +1,42 @@
+.loginFormWrapper{
+    width: 500px;
+    margin: auto;
+}
+.loginFormDiv{
+    margin-top: 2rem;
+    padding: 1rem;
+}
+.loginFormDiv>form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.loginFormDiv>form>div>div{
+    width: 100%;
+    border: 1px solid #ded9d9;
+}
+.loginFormDiv>form>div>div>input{
+    width: 100%;
+    border: none;
+    padding: 0.6rem;
+}
+.loginFormDiv>form>div>div>i{
+    font-size: 1.5rem;
+}
+.loginFormDiv>form>div>div>input:focus{
+    outline: none;
+}
+.loginFormDiv>form>div:nth-child(2)>div:nth-child(2){
+    display: flex;
+    align-items: center;
+}
+.submitButton{
+    padding: 0.6rem;
+    border: none;
+    color: white;
+    font-weight: bold;
+    background-color: #DD0285;
+}
+.submitButton:hover{
+    background-color: #bd0774;
+}

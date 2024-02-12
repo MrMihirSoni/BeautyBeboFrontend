@@ -1,0 +1,50 @@
+.cartBody{
+    max-width: 600px;
+    margin: 2rem auto;
+    border: 1px solid #ded9d9;
+}
+.cartProduct{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ded9d9;
+}
+.cartProductDetailsDiv{
+    width: 80%;
+    display: flex;
+    gap: 1rem;
+}
+.cartProductDetailsDiv>.cartProductImageDiv{
+    width: 20%;
+}
+.cartProductDetailsDiv>.cartProductImageDiv>img{
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+}
+.cartProductDetails{
+    white-space: nowrap;
+    overflow: hidden;
+}
+.cartProductDetails>p{
+    color: #DD0285;
+}
+.buyButtonDiv{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buyButtonDiv>button, .deleteButtonDiv>button{
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    background-color: #DD0285;
+}
+.buyButtonDiv>button:hover, .deleteButtonDiv>button:hover{
+    background-color: #bd0774;
+}

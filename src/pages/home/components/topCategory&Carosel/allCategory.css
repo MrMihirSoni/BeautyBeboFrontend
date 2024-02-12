@@ -1,0 +1,47 @@
+.categoriesWrapper{
+    width: 30%;
+}
+.categoriesTitle{
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.categoriesContentItems{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.categoriesContentItems>div{
+    display: flex;
+    gap: 0.8rem;
+}
+.categoriesContent{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+.topCrouselWrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.topCrousel{
+    width: 100%;
+}
+.topCrousel>div{
+    width: 100%;
+}
+.topCrousel>div>img{
+    width: 100%;
+}
+.topCrouselController{
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+.topCrouselController>i{
+    cursor: pointer;
+}
