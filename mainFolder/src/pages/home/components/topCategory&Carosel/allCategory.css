@@ -1,5 +1,6 @@
 .categoriesWrapper{
-    width: 30%;
+    width: 18rem;
+    margin-bottom: 1rem;
 }
 .categoriesTitle{
     display: flex;
@@ -44,4 +45,7 @@
 }
 .topCrouselController>i{
     cursor: pointer;
+}
+@media screen and (max-width:1040px) {
+    
 }
