@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import "./bestSeller.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { PriceContext } from "../../../../contexts/PriceContext";
 
 const BestSeller = () => {
   const [data, setData] = useState([]);
+  const {setCount, count} = useContext(PriceContext)
 
   const responsive = {
     superLargeDesktop: {
@@ -41,6 +43,20 @@ const BestSeller = () => {
     apiCall();
   }, []);
 
+  const addToCart = async (id) => {
+    try {
+      const response = await axios.post(
+        `https://beautybebobackend-production.up.railway.app/cart/add/${id}`,
+        {},
+        { withCredentials: true }
+      );
+      alert("Item added to your cart!")
+      if(response) setCount(count+1)
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <div className="bestSellerWrapper">
@@ -48,7 +64,7 @@ const BestSeller = () => {
         <div className="bestSeller">
           <Carousel responsive={responsive}>
             {data.map((ele, index) => (
-              <div className="bestSellerCard">
+              <div className="bestSellerCard" key={ele._id}>
                 <div className="bestSellerPhoto">
                   <img src={ele.image} alt="" />
                 </div>
@@ -69,7 +85,7 @@ const BestSeller = () => {
                     gap: "1rem",
                   }}
                 >
-                  <button>Add to cart</button>
+                  <button onClick={() => addToCart(ele._id)}>Add to cart</button>
                   <button>
                     <i className="bx bxs-heart"></i>
                   </button>

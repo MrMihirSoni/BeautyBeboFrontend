@@ -190,9 +190,11 @@ const Navbar = () => {
           <div
             style={{ flexDirection: "column" }}
             className="myCartForMobile"
-            onClick={() => {
-              setShowMobileMenu(!showMobileMenu);
-              console.log("clicked")
+            onMouseEnter={() => {
+              setShowMobileMenu(true);
+            }}
+            onMouseLeave={()=>{
+              setShowMobileMenu(false)
             }}
           >
             <div>

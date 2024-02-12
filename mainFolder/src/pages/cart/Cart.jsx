@@ -26,7 +26,7 @@ const Cart = () => {
       data.length > 0? (
         <div className="cartBody">
           {data.map((ele) => (
-            <div className="cartProduct">
+            <div className="cartProduct" key={ele._id}>
               <div className="cartProductDetailsDiv">
                 <div className="cartProductImageDiv">
                   <img src={ele.image} alt="" />

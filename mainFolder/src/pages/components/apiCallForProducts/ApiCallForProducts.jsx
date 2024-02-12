@@ -24,6 +24,7 @@ const ApiCallForProducts = ({ data }) => {
         {},
         { withCredentials: true }
       );
+      alert("Item added to your cart!")
       if(response) setCount(count+1)
     } catch (error) {
       console.log(error);
@@ -35,7 +36,7 @@ const ApiCallForProducts = ({ data }) => {
         <div className="productsWrapper">
           <div className="productsGrid">
             {data.map((ele) => (
-              <div className="productCard">
+              <div className="productCard" key={ele._id}>
                 <div className="productImg">
                   <img src={ele.image} alt="" />
                 </div>
