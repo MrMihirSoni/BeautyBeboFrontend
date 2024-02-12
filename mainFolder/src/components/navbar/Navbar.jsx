@@ -10,6 +10,7 @@ const Navbar = () => {
   const [hover, setHover] = useState(false);
   const { userName, auth, setAuth, setUserName } = useContext(AuthContext);
   const { cartPrice, count, setCount } = useContext(PriceContext);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
   const navigate = useNavigate();
   const handleLogout = async () => {
     navigate("/");
@@ -24,11 +25,11 @@ const Navbar = () => {
     }
     setHover(false);
   };
-  useEffect(()=>{
+  useEffect(() => {
     setTimeout(() => {
-      setCount(count+1)
+      setCount(count + 1);
     }, 1000);
-  },[])
+  }, []);
   return (
     <>
       <div className="navbarWrapper">
@@ -182,21 +183,83 @@ const Navbar = () => {
           >
             <i className="bx bxs-shopping-bag"></i>
             <p>MY CART</p>
-            <p>- {
-              cartPrice==0?"₹0.00":`₹${cartPrice}`
-              }</p>
+            <p>- {cartPrice == 0 ? "₹0.00" : `₹${cartPrice}`}</p>
           </div>
         </div>
         <div className="lowerNavbarForMobile">
-          <div className="myCartForMobile">
-            <i className="bx bx-menu"></i>
+          <div
+            style={{ flexDirection: "column" }}
+            className="myCartForMobile"
+            onClick={() => {
+              setShowMobileMenu(!showMobileMenu);
+              console.log("clicked")
+            }}
+          >
+            <div>
+              <i className="bx bx-menu"></i>
+            </div>
+            {showMobileMenu && (
+              <div className="toggleMenu">
+                <div
+                  onClick={() => navigate("/makeup")}
+                  className="lowerNavbarNavigation"
+                >
+                  <p>MAKEUP</p>
+                  <i className="bx bx-chevron-down"></i>
+                </div>
+                <div
+                  onClick={() => navigate("/skin")}
+                  className="lowerNavbarNavigation"
+                >
+                  <p>SKIN</p>
+                  <i className="bx bx-chevron-down"></i>
+                </div>
+                <div
+                  onClick={() => navigate("/hair")}
+                  className="lowerNavbarNavigation"
+                >
+                  <p>HAIR</p>
+                  <i className="bx bx-chevron-down"></i>
+                </div>
+                <div
+                  onClick={() => navigate("/personal-care")}
+                  className="lowerNavbarNavigation"
+                >
+                  <p>PERSONAL CARE</p>
+                  <i className="bx bx-chevron-down"></i>
+                </div>
+                <div
+                  onClick={() => navigate("/mom-baby-care")}
+                  className="lowerNavbarNavigation"
+                >
+                  <p>MOM & BABY CARE</p>
+                  <i className="bx bx-chevron-down"></i>
+                </div>
+                <div
+                  onClick={() => navigate("/fragrance")}
+                  className="lowerNavbarNavigation"
+                >
+                  <p>FRAGRANCE</p>
+                  <i className="bx bx-chevron-down"></i>
+                </div>
+                <div
+                  onClick={() => navigate("/womens")}
+                  className="lowerNavbarNavigation"
+                >
+                  <p>WOMEN FASHION</p>
+                  <i className="bx bx-chevron-down"></i>
+                </div>
+                <div className="lowerNavbarNavigation">
+                  <p>BRANDS</p>
+                  <i className="bx bx-chevron-down"></i>
+                </div>
+              </div>
+            )}
           </div>
           <div onClick={() => navigate("/cart")} className="myCartForMobile">
             <i className="bx bxs-shopping-bag"></i>
             <p>MY CART</p>
-            <p>- {
-              cartPrice==0?"₹0.00":`₹${cartPrice}`
-              }</p>
+            <p>- {cartPrice == 0 ? "₹0.00" : `₹${cartPrice}`}</p>
           </div>
         </div>
       </div>

@@ -40,3 +40,8 @@
 .submitButton:hover{
     background-color: #bd0774;
 }
+@media screen and (max-width:540px) {
+    .loginFormWrapper{
+        width: 300px;
+    }
+}

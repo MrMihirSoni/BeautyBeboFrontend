@@ -59,39 +59,47 @@ const Signup = () => {
         <form action="" onSubmit={handleFormSubmit}>
           <div>
             <p>First Name:</p>
-            <input
-              type="text"
-              name="firstName"
-              required
-              onChange={handleFormChange}
-            />
+            <div>
+              <input
+                type="text"
+                name="firstName"
+                required
+                onChange={handleFormChange}
+              />
+            </div>
           </div>
           <div>
             <p>Last Name:</p>
-            <input
-              type="text"
-              name="lastName"
-              required
-              onChange={handleFormChange}
-            />
+            <div>
+              <input
+                type="text"
+                name="lastName"
+                required
+                onChange={handleFormChange}
+              />
+            </div>
           </div>
           <div>
             <p>userName:</p>
-            <input
-              type="text"
-              name="userName"
-              required
-              onChange={handleFormChange}
-            />
+            <div>
+              <input
+                type="text"
+                name="userName"
+                required
+                onChange={handleFormChange}
+              />
+            </div>
           </div>
           <div>
             <p>Phone No.:</p>
-            <input
-              type="number"
-              name="phone"
-              required
-              onChange={handleFormChange}
-            />
+            <div>
+              <input
+                type="number"
+                name="phone"
+                required
+                onChange={handleFormChange}
+              />
+            </div>
           </div>
           <div>
             <p>Email:</p>

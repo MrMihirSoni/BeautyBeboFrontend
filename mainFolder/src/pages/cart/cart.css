@@ -48,3 +48,9 @@
 .buyButtonDiv>button:hover, .deleteButtonDiv>button:hover{
     background-color: #bd0774;
 }
+.emptyCartMsg{
+    text-align: center;
+    margin: 5rem 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
