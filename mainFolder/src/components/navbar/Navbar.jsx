@@ -9,7 +9,7 @@ import { PriceContext } from "../../contexts/PriceContext";
 const Navbar = () => {
   const [hover, setHover] = useState(false);
   const { userName, auth, setAuth, setUserName } = useContext(AuthContext);
-  const { cartPrice, count, setCount } = useContext(PriceContext);
+  const { cartPrice, setCartPrice, count, setCount } = useContext(PriceContext);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const navigate = useNavigate();
   const handleLogout = async () => {
@@ -22,6 +22,7 @@ const Navbar = () => {
       setAuth(false);
       setUserName("");
       localStorage.removeItem("userName");
+      setCartPrice(0);
     }
     setHover(false);
   };

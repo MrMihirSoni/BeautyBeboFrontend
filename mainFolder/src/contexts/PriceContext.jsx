@@ -14,7 +14,7 @@ const PriceContextProvider = ({ children }) => {
         { withCredentials: true }
       );
       setData(response.data.cartData);
-      const total = data.reduce((acc, crr) => {
+      const total = response.data.cartData.reduce((acc, crr) => {
         return acc + crr.price;
       }, 0);
       setCartPrice(total);

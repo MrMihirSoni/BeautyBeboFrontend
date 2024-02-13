@@ -3,10 +3,12 @@ import "./login.css";
 import axios from "axios";
 import { AuthContext } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { PriceContext } from "../../contexts/PriceContext";
 
 const Login = () => {
   const [passwordVisibility, setPasswordVisibility] = useState(false);
   const { auth, setAuth, userName, setUserName } = useContext(AuthContext);
+  const { count, setCount } = useContext(PriceContext);
   const navigate = useNavigate();
   const postData = async (data) => {
     try {
@@ -19,6 +21,7 @@ const Login = () => {
         setAuth(true);
         setUserName(response.data.userName);
         localStorage.setItem("userName", response.data.userName);
+        setCount(count + 1);
       }
     } catch (error) {
       console.error("Error:", error);
@@ -45,7 +48,7 @@ const Login = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     postData(userData);
-    navigate("/")
+    navigate("/");
   };
 
   return (
