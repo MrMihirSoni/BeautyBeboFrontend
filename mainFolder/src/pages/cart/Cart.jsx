@@ -14,6 +14,7 @@ const Cart = () => {
         `https://beautybebobackend-production.up.railway.app/cart/delete/${id}`,
         { withCredentials: true }
       );
+      alert("Item deleted from your Cart!")
       setCount(count + 1);
     } catch (error) {
       console.log(error);
