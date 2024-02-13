@@ -39,6 +39,7 @@
     border: none;
     color: white;
     border-radius: 3px;
+    cursor: pointer;
 }
 .bestSellerCardDetailsButtons>button:first-child{
     background-color: #DD0285;

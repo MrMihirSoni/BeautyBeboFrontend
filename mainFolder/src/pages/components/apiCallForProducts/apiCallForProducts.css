@@ -47,6 +47,7 @@
     border: none;
     color: white;
     border-radius: 3px;
+    cursor: pointer;
 }
 .productsCardButtons>button:first-child{
     background-color: #DD0285;

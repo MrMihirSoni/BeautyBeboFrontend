@@ -44,6 +44,7 @@
     border: none;
     border-radius: 3px;
     background-color: #DD0285;
+    cursor: pointer;
 }
 .buyButtonDiv>button:hover, .deleteButtonDiv>button:hover{
     background-color: #bd0774;

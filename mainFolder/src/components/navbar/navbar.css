@@ -90,6 +90,9 @@
     border: 1px solid #ded9d9;
     border-radius: 0 10px 10px 10px;
 }
+.accountMenu>p{
+    cursor: pointer;
+}
 .lowerNavbarWrapper{
     background-color: #DD0285;
     display: flex;
