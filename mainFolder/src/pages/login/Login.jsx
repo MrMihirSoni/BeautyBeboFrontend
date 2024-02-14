@@ -22,9 +22,16 @@ const Login = () => {
         setUserName(response.data.userName);
         localStorage.setItem("userName", response.data.userName);
         setCount(count + 1);
+        navigate("/");
+        alert("Login successful!");
       }
     } catch (error) {
-      console.error("Error:", error);
+      if (error.response.data.error == "Wrong password!")
+        alert("Wrong Password");
+      else if (error.response.data.error == "You need to register first!") {
+        navigate("/signup")
+        alert("Email is not registered\nRegister First!");
+      }
     }
   };
 
@@ -48,7 +55,6 @@ const Login = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     postData(userData);
-    navigate("/");
   };
 
   return (

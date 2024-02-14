@@ -12,6 +12,7 @@ import Ayurveda from "../pages/ayurveda/Ayurveda";
 import Womens from "../pages/womens/Womens";
 import Signup from "../pages/signup/Signup"
 import Cart from "../pages/cart/Cart";
+import SingleProduct from "../pages/singleProduct/SingleProduct";
 
 const AllRoutes = () => {
   return (
@@ -29,6 +30,7 @@ const AllRoutes = () => {
         <Route path="/womens" element={<Womens/>}/>
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/cart" element={<Cart/>}/>
+        <Route path="/:category/:id" element={<SingleProduct/>}/>
       </Routes>
     </div>
   );

@@ -16,6 +16,7 @@ const Signup = () => {
       setAuth(true);
       setUserName(response.data.userName);
       localStorage.setItem("userName", response.data.userName);
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
@@ -31,7 +32,19 @@ const Signup = () => {
         login(data.email, data.password);
       }
     } catch (error) {
-      console.error("Error:", error);
+      if (
+        error.response.data.error ==
+        "password must contain atleast 8 charectors!"
+      )
+        alert("Please create a password which has atleast 8 charectors!");
+      else if (error.response.data.error == "email already exists!") {
+        alert("Email already exists!\nLogin to continue!");
+        navigate("/login");
+      } else if (error.response.data.error == "phone number already exists!")
+        alert(
+          "Phone number already exists!\nTry different number for registeration!"
+        );
+      else console.log(error);
     }
   };
   const [userData, setUserData] = useState({
@@ -51,7 +64,6 @@ const Signup = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     postData(userData);
-    navigate("/");
   };
   return (
     <div className="loginFormWrapper">
@@ -113,7 +125,12 @@ const Signup = () => {
             </div>
           </div>
           <div>
-            <p>Password:</p>
+            <p>
+              Password:{" "}
+              <span style={{ color: "#DD0285", fontSize: "0.8rem" }}>
+                (must contain atleast 8 charector.)
+              </span>
+            </p>
             <div>
               <input
                 type="text"
@@ -123,7 +140,7 @@ const Signup = () => {
               />
             </div>
           </div>
-          <input className="submitButton" type="submit" value="Login" />
+          <input className="submitButton" type="submit" value="Register Now!" />
         </form>
       </div>
     </div>

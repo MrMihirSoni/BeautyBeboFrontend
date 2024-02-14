@@ -2,11 +2,13 @@ import React, { useContext, useEffect, useState } from "react";
 import "./apiCallForProducts.css";
 import axios from "axios";
 import { PriceContext } from "../../../contexts/PriceContext";
+import { useNavigate } from "react-router-dom";
 
 const ApiCallForProducts = ({ data }) => {
+  const navigate = useNavigate();
   const [load, setLoad] = useState(true);
   const [counter, setCounter] = useState(1);
-  const {count, setCount} = useContext(PriceContext);
+  const { count, setCount } = useContext(PriceContext);
   const showLoading = () => {
     setTimeout(() => setLoad(false), 3000);
   };
@@ -24,11 +26,14 @@ const ApiCallForProducts = ({ data }) => {
         {},
         { withCredentials: true }
       );
-      alert("Item added to your cart!")
-      if(response) setCount(count+1)
+      alert("Item added to your cart!");
+      if (response) setCount(count + 1);
     } catch (error) {
       console.log(error);
     }
+  };
+  const openSingleProduct = (id, category) => {
+    navigate(`/${category}/${id}`);
   };
   return (
     <>
@@ -36,7 +41,11 @@ const ApiCallForProducts = ({ data }) => {
         <div className="productsWrapper">
           <div className="productsGrid">
             {data.map((ele) => (
-              <div className="productCard" key={ele._id}>
+              <div
+                onClick={() => openSingleProduct(ele._id, ele.category)}
+                className="productCard"
+                key={ele._id}
+              >
                 <div className="productImg">
                   <img src={ele.image} alt="" />
                 </div>
